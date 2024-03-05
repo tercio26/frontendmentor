@@ -1,0 +1,200 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import "./fonts/fonts.css";
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+    --breakpoint-mobile: 375px;
+    --ff: Poppins, sans-serif;
+    --fs: 32px;
+}
+
+html {
+    font-family: var(--ff);
+    font-size: var(--fs);
+    background-color: var(--light-grey);
+}
+
+main {
+    min-height: 100vh;
+}
+
+.card {
+    position: absolute;
+    top: 11rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 1rem 1rem 4rem 1rem;
+    width: 100%;
+    max-width: calc(100% - 1rem);
+}
+
+.card .card-body {
+    padding: 1rem 0.75rem 1.5rem;
+}
+
+form {
+    position: relative;
+}
+
+.form-group {
+    display: flex;
+    gap: 0.375rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+}
+
+.form-group::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grey);
+    bottom: 0;
+}
+
+button {
+    display: inline-block;
+    position: absolute;
+    border: none;
+    bottom: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1.75rem;
+    width: 1.75rem;
+    padding: 0;
+    background-color: var(--purple);
+    border-radius: 50%;
+    cursor: pointer;
+    outline: 0;
+    transition: .3s ease;
+}
+
+button:hover {
+    background-color: var(--off-black);
+}
+
+button::before {
+    content: '';
+    background: center center no-repeat url("./images/icon-arrow.svg");
+    height: 0.75rem;
+    width: 0.75rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-size: contain;
+}
+
+button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.input-group {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 33.3333%;
+    gap: 0.25rem;
+    align-content: flex-start;
+    font-size: 0.75rem;
+}
+
+.form-label {
+    text-transform: uppercase;
+    font-size: 0.4rem;
+    font-weight: bold;
+    color: var(--smokey-grey);
+    letter-spacing: 0.125rem;
+}
+
+.form-error {
+    color: var(--light-red);
+    font-size: 0.375rem;
+    font-style: italic;
+}
+
+.input-group.error .form-label {
+    color: var(--light-red);
+}
+
+.input-group.error input {
+    border-color: var(--light-red);
+}
+
+.input-group input {
+    max-width: 100%;
+    width: 100%;
+    outline: none;
+    border-radius: 0.25rem;
+    border: 1px solid var(--light-grey);
+    padding: 0.25rem 0.45rem;
+    color: var(--off-black);
+    font-weight: bold;
+}
+
+.input-group input:focus {;
+    border-color: var(--purple);
+}
+
+.result {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.result p {
+    margin-bottom: 0.375rem;
+}
+
+.result p span {
+    color: var(--purple);
+    transition: .3s ease;
+}
+
+.attribution {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1440px) {
+    .card {
+        width: 100%;
+        max-width: 18rem;
+    }
+
+    .input-group {
+        flex: 1 1 25%;
+        max-width: 25%;
+        font-size: 1rem;
+    }
+
+    button {
+        left: unset;
+        right: 0;
+        bottom: -1rem;
+        height: 2rem;
+        width: 2rem;
+        transform: unset;
+    }
+
+    .result {
+        font-size: 2.25rem;
+    }
+}

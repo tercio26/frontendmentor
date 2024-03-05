@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Social links profile</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --breakpoint-pc: 1440px;
+
+            --primary-color: hsl(75, 94%, 57%);
+            --white: hsl(0, 0%, 100%);
+            --grey: hsl(0, 0%, 20%);
+            --dark-grey: hsl(0, 0%, 12%);
+            --off-black: hsl(0, 0%, 8%);
+
+            --inter: 'Inter', sans-serif;
+            --fs: 14px;
+            --fw-normal: 400;
+            --fw-semi-bold: 600;
+            --fw-bold: 700;
+        }
+
+        html {
+            font-size: var(--fs);
+            font-family: var(--inter);
+        }
+
+        body {
+            color: var(--white);
+            background-color: var(--off-black);
+            display: flex;
+        }
+
+        .container {
+            margin: auto;
+        }
+
+        .card {
+            width: 100%;
+            max-width: fit-content;
+            margin: auto;
+            background-color: var(--dark-grey);
+            border-radius: 1rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-body {
+            text-align: center;
+            padding: 2.25rem;
+        }
+
+        .card img {
+          border-radius: 50%;
+          width: 100%;
+          max-width: 5.5rem;
+        }
+
+        .card-name {
+            font-size: 1.5rem;
+            font-weight: var(--fw-bold);
+            margin: 1.5rem 0 .75rem;
+        }
+
+        .address {
+            font-weight: var(--fw-semi-bold);
+            color: var(--primary-color);
+            margin: 1rem;
+        }
+
+        .qoutes {
+            margin: 1.5rem;
+        }
+
+        .social-links a {
+            display: block;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            color: var(--white);
+            text-decoration: none;
+            background-color: var(--grey);
+            font-weight: var(--fw-bold);
+            transition: .3s ease;
+            cursor: pointer;
+        }
+
+        .social-links a:hover {
+            color: var(--grey);
+            background-color: var(--primary-color);
+        }
+
+        .social-links a + a {
+            margin-top: .75rem;
+        }
+
+        .attribution {
+            margin-top: auto;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 11px;
+            position: absolute;
+            bottom: .1rem
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+            text-decoration: none;
+        }
+
+        @media screen and (min-width: var(--breakpoint-pc)) {
+            .card {
+                max-width: 25rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <img src="./assets/images/avatar-jessica.jpeg" alt=""/>
+
+            <h2 class="card-name">Jessica Randall</h2>
+            <h6 class="address text-primary">London, United Kingdom</h6>
+
+            <div class="qoutes">"Front-end developer and avid reader."</div>
+
+            <div class="social-links">
+                <a href="" target="_blank">GitHub</a>
+                <a href="" target="_blank">Frontend Mentor</a>
+                <a href="" target="_blank">LinkedIn</a>
+                <a href="" target="_blank">Twitter</a>
+                <a href="" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/tercio26">Tercio</a>.
+</div>
+
+</body>
+</html>

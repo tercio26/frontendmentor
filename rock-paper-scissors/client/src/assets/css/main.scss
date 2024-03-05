@@ -1,0 +1,47 @@
+@import "_normalize.min.scss";
+@import "_reset.min.scss";
+@import "_fonts.scss";
+@import "_variables.scss";
+@import "_modal.scss";
+@import "_ultilities.scss";
+
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+}
+
+body {
+  background-image: $radial-gradient;
+  min-height: 100vh;
+  color: $white
+}
+
+p {
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+a[href] {
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+
+@media screen and (min-width: $desktop) {
+
+}
+
+.attribution {
+  @extend .text-xs;
+  @extend .text-center;
+  @extend .mt-5;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

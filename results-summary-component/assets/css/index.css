@@ -1,0 +1,198 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import "./fonts.css";
+@import "./variables.css";
+
+html {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    background-color: var(--pale-blue);
+}
+
+main {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: var(--white);
+    font-size: 0.875rem;
+}
+
+.card .card-result {
+    text-align: center;
+    background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+    border-radius: 0 0 2rem 2rem;
+    padding: 1.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-weight: bold;
+    color: var(--dark-gray-blue);
+    text-align: left;
+    font-size: 1rem;
+}
+
+.card-result h1 {
+    text-align: center;
+    color: var(--light-lavender);
+}
+
+.card-result .result-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    background: linear-gradient(var(--violet-blue), var(--persian-blue));
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+}
+
+.card-result .result-container .average-score {
+    font-size: 2.5rem;
+    color: var(--white);
+    font-weight: bolder;
+}
+
+.card-result .result-container .total {
+    color: var(--light-lavender);
+}
+
+.card-result .result {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.card-result p {
+    color: var(--light-lavender);
+    line-height: 1.5;
+}
+
+.card-body {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 1.5rem;
+    flex: 1 1 auto;
+}
+
+.summary {
+    margin: 1rem 0;
+}
+
+.summary .summary-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.75rem
+}
+.summary .summary-item img {
+    margin-right: 0.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+}
+.summary .summary-item .category-name {
+    font-weight: bold;
+    margin-right: auto;
+}
+.summary .summary-item .score {
+    color: var(--dark-gray-blue);
+    font-weight: bolder;
+    margin-left: auto;
+}
+.summary .summary-item .score span {
+    color: var(--light-lavender);
+}
+.summary .summary-item + .summary-item {
+    margin-top: 0.75rem;
+}
+.summary .summary-item:nth-child(4n + 1) {
+    background-color: var(--light-red-bg);
+}
+.summary .summary-item:nth-child(4n + 1) .category-name {
+    color: var(--light-red);
+}
+.summary .summary-item:nth-child(4n + 2) {
+    background-color: var(--orangey-yellow-bg);
+}
+.summary .summary-item:nth-child(4n + 2) .category-name {
+    color: var(--orangey-yellow);
+}
+.summary .summary-item:nth-child(4n + 3) {
+    background-color: var(--green-teal-bg);
+}
+.summary .summary-item:nth-child(4n + 3) .category-name {
+    color: var(--green-teal);
+}
+.summary .summary-item:nth-child(4n + 4) {
+    background-color: var(--cobalt-blue-bg);
+}
+.summary .summary-item:nth-child(4n + 4) .category-name {
+    color: var(--cobalt-blue);
+}
+
+button {
+    display: block;
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    color: var(--white);
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: auto;
+    background: linear-gradient(var(--dark-gray-blue), var(--dark-gray-blue));
+}
+
+button:hover, button:focus {
+    background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        position: absolute;
+        width: 35rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-flow: row nowrap;
+        border-radius: 1rem;
+        box-shadow: 1rem 1rem 2rem var(--cobalt-blue-bg);
+    }
+    .card .card-result {
+        border-radius: 1rem;
+        flex: 1 1 50%;
+    }
+    .card .card-body {
+        flex: 1 1 50%;
+    }
+}
+
+
+
+.attribution {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

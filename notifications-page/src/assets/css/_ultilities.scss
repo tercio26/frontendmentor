@@ -1,0 +1,187 @@
+@each $short, $attr in (
+        "m": "margin",
+        "p": "padding"
+) {
+  @each $index, $unit in (
+          0: 0,
+          1: 0.25rem,
+          2: 0.5rem,
+          3: 1rem,
+          4: 1.5rem,
+          5: 2rem,
+          6: 3rem
+  ) {
+    .#{$short}-#{$index}, .#{$short}x-#{$index}, .#{$short}l-#{$index} { #{$attr}-left: #{$unit} !important; }
+    .#{$short}-#{$index}, .#{$short}x-#{$index}, .#{$short}r-#{$index} { #{$attr}-right: #{$unit} !important; }
+    .#{$short}-#{$index}, .#{$short}y-#{$index}, .#{$short}t-#{$index} { #{$attr}-top: #{$unit} !important; }
+    .#{$short}-#{$index}, .#{$short}y-#{$index}, .#{$short}b-#{$index} { #{$attr}-bottom: #{$unit} !important; }
+  }
+}
+
+.text-bold {  font-weight: bold; }
+.text-bolder { font-weight: bolder; }
+.text-normal { font-weight: normal; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+.text-italic { font-style: italic; }
+.text-underline { text-decoration: underline; }
+.text-line-through { text-decoration: line-through; }
+.text-none { text-decoration: none; }
+
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+.text-nowrap { white-space: nowrap; }
+.text-break { word-break: break-all; }
+
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-3xl { font-size: 1.875rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+.text-6xl { font-size: 3.75rem; }
+
+.img-responsive {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.img-cover { object-fit: cover; }
+.img-contain { object-fit: contain; }
+.img-center { object-position: center; }
+.img-top { object-position: top; }
+.img-bottom { object-position: bottom; }
+
+.h-25 { height: 25%; }
+.w-25 { width: 25%; }
+.h-50 { height: 50%; }
+.w-50 { width: 50%; }
+.h-75 { height: 75%; }
+.w-75 { width: 75%; }
+.h-100 { height: 100%; }
+.w-100 { width: 100%; }
+.h-auto { height: auto; }
+.w-auto { width: auto; }
+
+$colors: (
+        "dark" $dark $white,
+        "muted" $muted $dark,
+        "danger" $danger $white,
+        "white" $white $dark,
+        "secondary" $secondary $dark,
+        "light" $light-grayish-1 $dark,
+        "primary" $primary $white
+);
+@each $text, $color, $contrast in $colors {
+  .text-#{$text} {
+    color: $color;
+  }
+  .text-hover-#{$text}:hover {
+    color: $color;
+  }
+  .bg-#{$text} {
+    background-color: $color;
+  }
+  .bg-hover-#{$text}:hover {
+    background-color: $color;
+  }
+  .badge-#{$text} {
+    background-color: $color;
+    color: $contrast;
+  }
+}
+
+.transition { transition: 0.3s ease; }
+
+
+.badge {
+  padding: 0 0.625rem;
+  display: inline-block;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  transition: .3s ease;
+}
+
+.btn-danger {
+  background-color: $danger;
+  color: $white;
+}
+
+.btn-hover-dark:hover {
+  background-color: $dark;
+  color: $white;
+}
+
+.d-block { display: block; }
+.d-none { display: none; }
+.d-flex { display: flex; }
+
+.justify-content-space-between { justify-content: space-between; }
+.justify-content-space-around { justify-content: space-around; }
+.justify-content-space-evenly { justify-content: space-evenly; }
+.justify-content-center { justify-content: center; }
+.justify-content-start { justify-content: flex-start; }
+.justify-content-end { justify-content: flex-end; }
+.justify-content-stretch { justify-content: stretch; }
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+.align-content-center { align-content: center; }
+.align-content-start { align-content: flex-start; }
+.align-content-end { align-content: flex-end; }
+
+.border { border: thin solid $light-grayish-2; border-radius: 0.25rem }
+.border-rounded { border-radius: 0.5rem; }
+
+.row {
+  --gutter: 1rem;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gutter);
+
+  &.gap-0 { --gutter: 0 }
+  &.gap-1 { --gutter: 1rem }
+  &.gap-2 { --gutter: 1.25rem }
+  &.gap-3 { --gutter: 1.5rem }
+  &.gap-4 { --gutter: 1.75rem }
+  &.gap-5 { --gutter: 2rem }
+  &.gap-6 { --gutter: 2.25rem }
+  &.gap-7 { --gutter: 2.5rem }
+  &.gap-8 { --gutter: 2.75rem }
+}
+
+.flex-0 {
+  flex: 1 1 0;
+}
+@mixin col-basis($rate, $total) {
+  flex: 1 1 calc($rate / $total * 100% - var(--gutter));
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @include col-basis($i, 12);
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      @include col-basis($i, 12);
+    }
+  }
+}

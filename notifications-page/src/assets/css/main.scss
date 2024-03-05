@@ -1,0 +1,69 @@
+@import "_normalize.min.scss";
+@import "_reset.min.scss";
+@import "_fonts.scss";
+@import "_variables.scss";
+@import "_ultilities.scss";
+
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $secondary;
+}
+
+body {
+  background-color: $very-light-grayish;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 41.5rem;
+  margin: 0 auto;
+}
+
+.notification {
+  background-color: $white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &.unread {
+    background-color: $very-light-grayish;
+
+    .notification-description::after {
+      content: "";
+      display: inline-block;
+      height: 0.5rem;
+      width: 0.5rem;
+      margin-left: 0.25rem;
+      border-radius: 50%;
+      background-color: $danger;
+    }
+  }
+}
+
+a[href] {
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+.thumbnail {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media screen and (min-width: $desktop) {
+  .container {
+    margin: 4rem auto;
+  }
+}
+
+.attribution {
+  @extend .text-xs;
+  @extend .text-center;
+  @extend .mt-5;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

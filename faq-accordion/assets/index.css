@@ -1,0 +1,135 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
+
+@font-face {
+    font-family: Work Sans;
+    src: url('fonts/static/WorkSans-Regular.ttf');
+}
+
+:root {
+    --breakpoint-pc: 1440px;
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+    --light-purple: #ad28eb;
+    --ff: Work Sans, sans-serif;
+    --fs: 16px;
+    --fw-semi-bold: 400;
+    --fw-bold: 700;
+}
+
+html {
+    font-family: var(--ff);
+    font-size: var(--fs);
+}
+
+main {
+    min-height: 99.9vh;
+    background-color: var(--light-pink);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    position: relative;
+    top: -8rem;
+    margin: auto;
+}
+
+.card-dialog {
+    background-color: var(--white);
+    width: auto;
+    max-width: 23rem;
+    border-radius: .5rem;
+}
+
+.card-content {
+    padding: 1.75rem;
+}
+
+.card .card-header {
+    position: relative;
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: 1rem;
+}
+
+.card .card-header::before {
+    content: "";
+    background: center center no-repeat url("images/icon-star.svg");
+    background-size: cover;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    margin-right: 1.75rem;
+}
+
+picture img {
+    width: 100%;
+}
+
+.faq-item .faq-title {
+    font-weight: var(--fw-bold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color .3s ease;
+    cursor: pointer;
+    padding: 1.25rem 0;
+}
+.faq-item .faq-title:hover {
+    color: var(--light-purple);
+}
+.faq-item .faq-title::after {
+    content: '';
+    background: center center no-repeat url("images/icon-plus.svg");
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    margin-left: 3rem;
+    flex: 0 0 auto;
+    transition: .5s ease;
+}
+.faq-item .faq-description {
+    color: var(--grayish-purple);
+    height: 0;
+    overflow: hidden;
+    transition: height .5s ease;
+}
+.faq-item.active {
+    margin-bottom: 1.25rem;
+}
+.faq-item.active .faq-title::after {
+    background-image: url("images/icon-minus.svg");
+}
+.faq-item.active .faq-description {
+    height: auto;
+}
+.faq-item + .faq-item {
+    border-top: 2px solid var(--light-pink);
+}
+
+.attribution {
+    margin-top: auto;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen  and (min-width: var(--breakpoint-pc)) {
+    .card-dialog {
+        max-width: 36rem;
+    }
+}

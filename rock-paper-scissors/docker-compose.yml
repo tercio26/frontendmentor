@@ -1,0 +1,34 @@
+version: '3.7'
+services:
+  client:
+    build: client
+    container_name: client
+    volumes:
+      - ./client:/app
+    restart: always
+    ports:
+      - 3001:3001
+    tty: true
+    stdin_open: true
+    networks:
+      - nodejs
+
+  server:
+    build: server
+    container_name: server
+    volumes:
+      - ./server:/app
+    restart: always
+    ports:
+      - "3000:3000"  # Map host port 3000 to container port 3000 (Express default)
+    tty: true
+    stdin_open: true
+    networks:
+      - nodejs
+
+volumes:
+  db-data:
+    external: false
+
+networks:
+  nodejs:

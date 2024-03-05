@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+
+  <main id="app">
+    <div class="card">
+      <div class="card-result">
+        <h1>Your Result</h1>
+
+        <div class="result-container">
+          <div class="average-score">{{ averageScore }}</div>
+          <div class="total">of 100</div>
+        </div>
+
+        <div class="result">{{ result }}</div>
+
+        <p>{{ resultDescription }}</p>
+      </div>
+      <div class="card-body">
+        <h1>Summary</h1>
+
+        <div class="summary">
+          <div class="summary-item" v-for="item in data" :key="item.category">
+            <img :src="item.icon" :alt="item.category">
+            <div class="category-name">{{ item.category }}</div>
+            <div class="score">{{ item.score }}<span> / 100</span></div>
+          </div>
+        </div>
+
+        <button @click="fetchData">Continue</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/tercio26">Tercio</a>.
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script type="text/javascript" src="./assets/app.js"></script>
+</body>
+</html>

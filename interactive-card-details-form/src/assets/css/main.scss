@@ -1,0 +1,154 @@
+@import "_normalize.min.scss";
+@import "_reset.min.scss";
+@import "_fonts.scss";
+@import "_variables.scss";
+@import "_ultilities.scss";
+@import "_form.scss";
+
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $secondary;
+}
+
+body {
+  background-color: $white;
+  line-height: 1.5;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin background-image($url) {
+  @extend .background-cover, .background-no-repeat;
+  background-image: url($url);
+}
+
+.banner {
+  flex: 0 0 100%;
+  min-height: 14rem;
+  gap: 2rem;
+  position: relative;
+  @include background-image("/assets/images/bg-main-mobile.png");
+  @extend .background-cover, .d-flex;
+}
+
+.card {
+  width: 14.5rem;
+  height: 7rem;
+  position: absolute;
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+  @extend .border-rounded, .p-3, .text-white, .letter-spacing-1;
+}
+
+.card-front {
+  @include background-image("/assets/images/bg-card-front.png");
+  @extend .d-flex, .flex-column, .card;
+  left: 1rem;
+  top: calc(50% + 5.125rem);
+  transform: translateY(-50%);
+  z-index: 1;
+
+  &::before {
+    content: "";
+    width: 5rem;
+    height: 100%;
+    max-height: 1.625rem;
+    @include background-image("/assets/images/card-logo.svg");
+    @extend .background-contain, .background-position-left, .d-block, .mb-auto;
+  }
+}
+
+.card-back {
+  @extend .card;
+  @include background-image("/assets/images/bg-card-back.png");
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .card-cvc {
+    @extend .d-flex, .justify-content-end, .align-items-center, .pr-3, .h-100, .text-sm;
+  }
+}
+
+.card-number {
+  @extend .text-ellipsis
+}
+.card-form {
+  flex: 0 0 100%;
+  padding-top: 4rem;
+  @extend .d-flex;
+}
+
+.container {
+  max-width: 41.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+a[href] {
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+
+@media screen and (min-width: $desktop) {
+  .card-form {
+    flex: 0 0 65%;
+    padding-top: 0;
+
+    .container {
+      max-width: 20rem;
+      margin-left: 60%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .card {
+    width: 20rem;
+    height: 10rem;
+    position: relative;
+    top: unset;
+    transform: unset;
+    font-size: 1.25rem;
+  }
+  .card-front {
+    left: 50%;
+
+    &::before {
+      max-height: 2.625rem;
+    }
+  }
+  .card-back {
+    left: 75%;
+    .card-cvc {
+      padding-right: 1.5rem !important;
+    }
+  }
+  .banner {
+    flex: 0 0 35%;
+    background-image: url("/assets/images/bg-main-desktop.png");
+
+    .container {
+      gap: 2rem
+    }
+  }
+}
+
+.attribution {
+  @extend .text-xs;
+  @extend .text-center;
+  @extend .mt-5;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

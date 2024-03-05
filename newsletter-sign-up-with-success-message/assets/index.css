@@ -1,0 +1,226 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@font-face {
+    font-family: Roboto;
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --breakpoint-pc: 1440px;
+    --primary-color: hsl(4, 100%, 67%);
+    --dark-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+    --ff: Roboto, sans-serif;
+    --fs: 16px;
+}
+
+html {
+    font-family: var(--ff);
+    font-size: var(--fs);
+    background-color: var(--charcoal-grey);
+}
+
+main {
+    min-height: 100vh;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card .card-body {
+    height: 100%;
+    color: var(--dark-grey);
+    background-color: var(--white);
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.card .card-body .card-content {
+    padding: 1rem 1.5rem 2rem;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.card.card-success .card-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+}
+
+.card.card-success img {
+    margin: auto auto 0.5rem 0;
+}
+
+.card.card-success p {
+    margin-bottom: auto;
+}
+
+.card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--dark-grey);
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+    line-height: 1.5;
+}
+
+ul li {
+    display: flex;
+    margin: 1rem 0;
+}
+
+ul li::before {
+    content: "";
+    background: center center no-repeat url("./images/icon-list.svg");
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: cover;
+    margin-right: 1rem;
+    flex: 0 0 auto;
+}
+
+.form-group {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+.form-group .form-label {
+    margin-right: auto;
+}
+
+.form-group .form-error {
+    margin-left: auto;
+    color: var(--primary-color);
+}
+
+.form-group input {
+    border: 1px solid var(--grey);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    display: block;
+    flex: 1 1 100%;
+}
+.form-group input.error {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+button {
+    display: block;
+    background-color: var(--dark-grey);
+    color: var(--white);
+    font-weight: bold;
+    padding: 1.25rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    margin-top: auto;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+}
+
+@media screen and (min-width: var(--breakpoint-pc)) {
+    .card {
+        width: 55rem;
+        height: auto;
+    }
+
+    .card.card-success {
+        width: 30rem;
+    }
+
+    .card .card-body {
+        border-radius: 2rem;
+        flex-flow: row nowrap;
+    }
+
+    .card .card-body .card-banner {
+        padding: 1.5rem 1.5rem 1.5rem 0;
+        order: 2;
+    }
+
+    .card .card-body .card-banner img {
+        border-radius: 1rem;
+    }
+
+    .card.card-success .card-body .card-content {
+        padding: 2.5rem 3rem 3rem;
+    }
+
+    .card.card-success p {
+        margin-bottom: 2rem;
+    }
+
+    .card .card-body .card-content {
+        padding: 6rem 3.75rem;
+        order: 1;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .attribution {
+        color: var(--white);
+    }
+}
+
+.attribution {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
