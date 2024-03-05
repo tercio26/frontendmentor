@@ -167,7 +167,7 @@ button:hover {
     background-color: var(--primary-color);
 }
 
-@media screen and (min-width: var(--breakpoint-pc)) {
+@media screen and (min-width: 1440px) {
     .card {
         width: 55rem;
         height: auto;
